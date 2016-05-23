@@ -34,11 +34,45 @@ folder structure
 |-  ENVIRT.m
 |-  ENVIRT_CORE.m
 ```
-Suppose the ```contig_spectrum.txt``` contains the contig spectrum of 10000 reads. An example scenario can be seen as below.
+Suppose the ```contig_spectrum.txt``` contains the contig spectrum of 10000 reads. An example scenario can be given as below.
 
   ```ENVIRT('contig_spectrum.txt',10000,100,35,50,1,15000,'',5,'',10000,310000,29,'./Result_Set',true) ```
   
 Note that some inputs are given empty strings, since they contain default values. However, the spectrum file, number of 
 reads, the average read length, and the overlap length cannot be left empty. 
+
+## Outputs
+
+At the end of the execution of the function 'ENVirT', a new folder called 'Result_Set' will be created as follows.
+```
++ Working_Directory
+|-  contig_spectrum.txt
+|-  ENVIRT.m
+|-  ENVIRT_CORE.m
+|+  Result_Set
+  |-  ga_results_1.txt
+  |-  ga_results_2.txt
+  |-  ga_results_3.txt
+  |-  ga_results_4.txt
+  |-  model_results.txt
+  |-  results.txt
+  |-  results_final.txt
+```
+
+The final results, with the best fitting model, will be recorded in the 'results_final.txt' file as follows. 
+
+```
+ location: contig_spectrum.txt
+ richness: 4879
+ average genome length: 297733
+ d: 2.48900
+ a: lognormal
+ residual error: 1.697270e-04
+ run time: 8121.02s
+ evenness: 0.6569
+```
+In the cases where the estimates of each model is needed, you may read the results in 'model_results.txt'. And intermediate results are written in 'results.txt'. The optimization steps for each model are written in ga_results_<model>.txt files. 
+(for the models, 1- Power Law, 2- Exponential, 3- Logarithmic, 4-Lognormal).
+
 
 For further information, refer to the original publication of ENVirT, by D. Jayasundara et al. 
