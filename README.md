@@ -28,12 +28,12 @@ To run the algorithm on a dataset, use the following input specification:
 
 A sample run would require adding ENVIRT.m to the working directory path. For demonstration purposes, consider the following
 folder structure
-
+```
 + Working_Directory
 |-contig_spectrum.txt
 |-  ENVIRT.m
 |-  ENVIRT_CORE.m
-
+```
 Suppose the ```contig_spectrum.txt``` contains the contig spectrum of 10000 reads. An example scenario can be seen as below.
 
   ```ENVIRT('contig_spectrum.txt',10000,100,35,50,1,15000,'',5,'',10000,310000,29,'./Result_Set',true) ```
