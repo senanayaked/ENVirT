@@ -33,12 +33,12 @@ folder structure
 
 Suppose the ``contig_spectrum.txt`` contains the contig spectrum of 10000 reads. An example scenario can be given as below.
 
-ENVIRT('contig_spectrum.txt',10000,100,35,50,1,15000,'',5,'',10000,310000,29,'./Result_Set',true)
+``>> ENVIRT('contig_spectrum.txt',10000,100,35,50,1,15000,'',5,'',10000,310000,29,'./Result_Set',true)``
 
-The same rsults can be acchieved by running the python script as below.
+The same results can be achieved by running the python script as below.
 
 
-python ENVIRT.py 'contig_spectrum.txt' 10000 100 35 50 1 15000 '' 5 '' 10000 310000 29 './Result_Set' true
+``$python ENVIRT.py 'contig_spectrum.txt' 10000 100 35 50 1 15000 '' 5 '' 10000 310000 29 './Result_Set' true``
 
 
 ## Outputs
