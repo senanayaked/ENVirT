@@ -1,0 +1,8 @@
+location: /home/senanayaked/Documents/AB_1_NG_10000_GL_25_NR_10000_RL_100_S_0/AB_1_NG_10000_GL_25_NR_10000_RL_100_S_0_SPECTRUM.txt
+ richness: 110
+ average genome length: 2563
+ d: 4.02900
+ a: logarithmic
+ residual error: 9.243564e+00
+ run time: 6.39s
+ evenness: 0.3220
