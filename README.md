@@ -3,13 +3,24 @@ Repository for the Matlab implementation of ENVirT : simultaneous estimation of 
 
 ENVirT is an algorithm which provides simultaneous estimates of the viral richness and average genome length of a metagenomic sample without prior assumptions of the average genome length. 
 
-## Input Specification
-To run the algorithm on a dataset, use the following input specification: 
-* spectrum_file : File containing the contig spectrum that needs to be analyzed [required]
-* n_reads       : Number of reads in the contig spectrum. [required]
-* avg_read_length : Average length of a single read in the sample (bp). [required]
-* overlap_length : Overlap length considered when generating the contig spectrum (bp). [required]
-* trim_length : Number of contig spectrum elements to consider in the algorithm. This can help with reducing the running time.
+## Running the Algorithm
+
+To run the algorithm on a dataset, open ENVIRT.m using a matlab distribution and execute the file without any input parameters. 
+`` >> ENVIRT()``
+
+You will be prompted to select a contig spectrum file. 
+
+The next input window will have the following inputs to be completed. 
+
+### Config Spectrum Configuration
+* Number of reads in the contig spectrum. [required]
+* Average length of a single read in the sample (bp). [required]
+* Overlap length considered when generating the contig spectrum (bp). [required]
+* Number of contig spectrum elements to consider in the algorithm. This can help with reducing the running time.
+
+The next window will prompt you to input the search configuration for the algorithm. 
+
+### Search Configuration 
 * M_min : Lower bound of the search space for richness (M)
 * M_max : Upper bound of the search space for richness (M)
 * d_res : Resolution for the distribution specific parameter (d)
@@ -23,33 +34,33 @@ To run the algorithm on a dataset, use the following input specification:
   
 ## Running a Sample
 
-A sample run would require adding ENVIRT.m to the working directory path. For demonstration purposes, consider the following
-folder structure
+We have included a sample dataset in the ``Contig_Spectrum_Example`` directory. The running instructions are as below. 
 
-+ Working_Directory
-|-contig_spectrum.txt
-|-  ENVIRT.m
-|-  ENVIRT_CORE.m
+* Open matlab and execute ENVIRT.m as follows
 
-Suppose the ``contig_spectrum.txt`` contains the contig spectrum of 10000 reads. An example scenario can be given as below.
+`` >> ENVIRT(); ``
 
-``>> ENVIRT('contig_spectrum.txt',10000,100,35,50,1,15000,'',5,'',10000,310000,29,'./Result_Set',true)``
+* Select the ``AB_1_NG_10000_GL_25_NR_10000_RL_100_S_0_SPECTRUM`` inside the ``Contig_Spectrum_Example`` directory 
+ 
+* Complete the _Contig Spectrum Configuration Prompt_ with the following inputs 
+	- No. of reads : 10000
+	- Average read length : 100 
+	- Overlap Length : 35
+	- Trim Length : 50 
+* Leave the _search configuration_ in their default values
 
-The same results can be achieved by running the python script as below.
+* Select result save location
 
+* Select if you want to save the files that are intermediate results
 
-``$python ENVIRT.py 'contig_spectrum.txt' 10000 100 35 50 1 15000 '' 5 '' 10000 310000 29 './Result_Set' true``
+Now the script will be executed. 
 
 
 ## Outputs
 
 At the end of the execution of the function 'ENVirT', a new folder called 'Result_Set' will be created as follows.
 
-+ Working_Directory
-|-  contig_spectrum.txt
-|-  ENVIRT.m
-|-  ENVIRT_CORE.m
-|+  Result_Set
++  Result_Set
   |-  ga_results_1.txt
   |-  ga_results_2.txt
   |-  ga_results_3.txt
