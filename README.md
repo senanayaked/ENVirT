@@ -5,20 +5,23 @@ ENVirT is an algorithm which provides simultaneous estimates of the viral richne
 
 ## Running the Algorithm
 
-To run the algorithm on a dataset, open ENVIRT.m using a matlab distribution and execute the file without any input parameters. 
-`` >> ENVIRT()``
+To run the algorithm on a dataset, open ENVIRT.mlapp using a matlab distribution and execute the file. 
+`` >> ENVIRT``
 
+Follow the buttons that will guide you through the input and search configurations. 
+
+### Load Contig Spectrum
 You will be prompted to select a contig spectrum file. 
 
-The next input window will have the following inputs to be completed. 
+The next button will pop up a  window which will have the following inputs to be completed. 
 
-### Config Spectrum Configuration
+### Input Configuration
 * Number of reads in the contig spectrum. [required]
 * Average length of a single read in the sample (bp). [required]
 * Overlap length considered when generating the contig spectrum (bp). [required]
 * Number of contig spectrum elements to consider in the algorithm. This can help with reducing the running time.
 
-The next window will prompt you to input the search configuration for the algorithm. 
+The next button will prompt you to input the search configuration for the algorithm. 
 
 ### Search Configuration 
 * M_min : Lower bound of the search space for richness (M)
@@ -29,16 +32,25 @@ The next window will prompt you to input the search configuration for the algori
 * L_min : Lower bound of the search space for average genome length (L)
 * L_max : Upper bound of the search space for average genome length (L)
 * n_windows : Mumber of niching windows along the L dimension
+
+### Select Result Folder
+
+This browse window will allow you to specify the result save location. 
+
 * result_folder : Path of the results folder
+
+### Select whether you want the intermediate result files to be saved.
+
 * persist_intermediates : True for a file with intermediate results, False to skip writing intermediate results to files. Recommended to skip writing for faster calculations. 
-  
+
+
 ## Running a Sample
 
 We have included a sample dataset in the ``Contig_Spectrum_Example`` directory. The running instructions are as below. 
 
 * Open matlab and execute ENVIRT.m as follows
 
-`` >> ENVIRT(); ``
+`` >> ENVIRT; ``
 
 * Select the ``AB_1_NG_10000_GL_25_NR_10000_RL_100_S_0_SPECTRUM`` inside the ``Contig_Spectrum_Example`` directory 
  
@@ -80,7 +92,7 @@ The final results, with the best fitting model, will be recorded in the 'results
  run time: 8121.02s
  evenness: 0.6569
 
-In ases where the estimates of each model is needed, you may read the results in 'model_results.txt'. And intermediate results are written in 'results.txt'. The optimization steps for each model are written in ga_results_<model>.txt files. 
+In cases where the estimates of each model is needed, you may read the results in 'model_results.txt'. And intermediate results are written in 'results.txt'. The optimization steps for each model are written in ga_results_<model>.txt files. 
 (for the models, 1- Power Law, 2- Exponential, 3- Logarithmic, 4-Lognormal).
 
 For further information, refer to the original publication of ENVirT, by D. Jayasundara et al. 
