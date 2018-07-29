@@ -59,7 +59,15 @@ We have included a sample dataset in the ``Contig_Spectrum_Example`` directory. 
 	- Average read length : 100 
 	- Overlap Length : 35
 	- Trim Length : 50 
-* Leave the _search configuration_ in their default values
+* Set the _Search Configurations_ to the following Values
+	- M_min = 50
+	- M_max = 150
+	- p_res = 0.01
+	- p_max = 5
+	- L_res = 500
+	- L_min = 1000
+	- L_max = 3000
+	- n_Windows = 29
 
 * Select result save location
 
