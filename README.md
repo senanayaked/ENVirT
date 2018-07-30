@@ -3,6 +3,15 @@ Repository for the Matlab implementation of ENVirT : simultaneous estimation of 
 
 ENVirT is an algorithm which provides simultaneous estimates of the viral richness and average genome length of a metagenomic sample without prior assumptions of the average genome length. 
 
+## System Requirements
+
+This implementation of ENVirT consists of a Matlab script which requires a Matlab installation (R2016a or later). The following packages are required for the running of the script. 
+
+* Matlab Parallel Computing Toolbox
+* Matlab Global Optimization Toobox
+
+This software is supported on Windows / Unix / Linux platforms. 
+
 ## Running the Algorithm
 
 To run the algorithm on a dataset, open ENVIRT.mlapp using a matlab distribution and execute the file. 
@@ -62,8 +71,8 @@ We have included a sample dataset in the ``Contig_Spectrum_Example`` directory. 
 * Set the _Search Configurations_ to the following Values
 	- M_min = 50
 	- M_max = 150
-	- p_res = 0.01
-	- p_max = 5
+	- d_res = 0.01
+	- d_max = 5
 	- L_res = 500
 	- L_min = 1000
 	- L_max = 3000

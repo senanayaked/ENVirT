@@ -1,8 +1,8 @@
 
-%% ENVIRT_SEARCH() - Run this file to execute the ENVirT algorithm. 
+%% ENVIRT_SEARCH - Run this file to execute the ENVirT algorithm. 
 
 
-function ENVIRT_SEARCH(spectrum_file, n_reads, avg_read_length, overlap_length, trim_length, M_min, M_max, p_res, p_max, L_res, L_min, L_max, n_windows, result_folder, persist_intermediates)
+function ENVIRT_SEARCH(spectrum_file, n_reads, avg_read_length, overlap_length, trim_length, M_min, M_max, d_res, d_max, L_res, L_min, L_max, n_windows, result_folder, persist_intermediates)
 
 % [filename, path] = uigetfile('*.*', 'Select Contig Spectrum File');
 % spectrum_file = fullfile(path, filename);
@@ -52,10 +52,10 @@ if ~exist('M_max', 'var') || isempty(M_max);
 else
     max_M = str2num(M_max);
 end
-if ~exist('p_res','var') || isempty(p_res);
-    p_res = 0.01;
+if ~exist('p_res','var') || isempty(d_res);
+    d_res = 0.01;
 end
-if ~exist('p_max','var') || isempty(p_max); p_max = 5; end
+if ~exist('p_max','var') || isempty(d_max); d_max = 5; end
 if ~exist('L_res','var') || isempty(L_res); L_res = 500; end
 if ~exist('L_min','var') || isempty(L_min); L_min = 500; end
 if ~exist('L_max','var') || isempty(L_max); L_max = 300000 + L_min; end
@@ -87,7 +87,7 @@ try
         fprintf('%s\n',datestr(now));
         fprintf('%s\n\n',spectrum_file);
 
-        ENVIRT_CORE(C,cfg,ab_model,min_M,max_M,p_res,p_max,L_res,L_min,L_max,L_partition_width,result_folder,interm_file);
+        ENVIRT_CORE(C,cfg,ab_model,min_M,max_M,d_res,d_max,L_res,L_min,L_max,L_partition_width,result_folder,interm_file);
 
         fprintf('%s\n\n',datestr(now));
     end
